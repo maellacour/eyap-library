@@ -4,7 +4,7 @@ namespace EyapLibrary.UI
 	using UnityAtoms.BaseAtoms;
 	using UnityEngine;
 
-	public class IntDisplayerInputField : MonoBehaviour
+	public class AtomsIntDisplayerInputField : MonoBehaviour
 	{
 		[SerializeField] private TMP_InputField _textField;
 		[SerializeField] private IntVariable _intVariable;
