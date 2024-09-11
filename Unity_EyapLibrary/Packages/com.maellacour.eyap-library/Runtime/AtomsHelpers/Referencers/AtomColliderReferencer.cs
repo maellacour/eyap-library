@@ -1,4 +1,4 @@
-namespace EyapLibrary.AtomsHelpers
+namespace EyapLibrary.AtomsHelpers.Referencers
 {
 	using UnityEngine;
 	using UnityAtoms.BaseAtoms;
