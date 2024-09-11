@@ -3,7 +3,7 @@ namespace EyapLibrary.AtomsHelpers
 	using UnityEngine;
 	using UnityAtoms.BaseAtoms;
 
-	public class AtomsGameObjectReferencer : MonoBehaviour
+	public class AtomGameObjectReferencer : MonoBehaviour
 	{
 		[SerializeField] private GameObjectVariable _gameObjectVariableRef;
 

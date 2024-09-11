@@ -3,7 +3,7 @@ namespace EyapLibrary.AtomsHelpers
 	using UnityEngine;
 	using UnityAtoms.BaseAtoms;
 
-	public class AtomsColliderReferencer : MonoBehaviour
+	public class AtomColliderReferencer : MonoBehaviour
 	{
 		[Tooltip("Optionnal")]
 		[SerializeField] private Collider _collider;

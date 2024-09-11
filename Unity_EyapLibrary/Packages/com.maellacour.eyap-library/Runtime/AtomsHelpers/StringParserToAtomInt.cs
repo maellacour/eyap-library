@@ -3,7 +3,7 @@ namespace AtomsExtensions
 	using UnityEngine;
 	using UnityAtoms.BaseAtoms;
 
-	public class AtomsStringParserInt : MonoBehaviour
+	public class StringParserToAtomInt : MonoBehaviour
 	{
 		[SerializeField] private IntVariable _intVariable;
 
