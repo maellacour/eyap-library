@@ -1,4 +1,4 @@
-namespace EyapLibrary.TMPHelpers.Text
+namespace EyapLibrary.TMPHelpers
 {
 	using TMPro;
 	using UnityEngine;

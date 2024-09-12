@@ -1,4 +1,4 @@
-namespace EyapLibrary.TMPHelpers.InputField
+namespace EyapLibrary.TMPHelpers
 {
 	using TMPro;
 	using UnityEngine;
@@ -8,37 +8,37 @@ namespace EyapLibrary.TMPHelpers.InputField
 	{
 		public override void UpdateTextField(string value)
 		{
-			_tmpInputField?.SetText(value);
+			_tmpInputField?.SetTextWithoutNotify(value);
 		}
 
 		public override void UpdateTextField(int value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 
 		public override void UpdateTextField(float value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 
 		public override void UpdateTextField(bool value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 
 		public override void UpdateTextField(Vector3 value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 
 		public override void UpdateTextField(Vector2 value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 
 		public override void UpdateTextField(object value)
 		{
-			_tmpInputField?.SetText(value.ToString());
+			_tmpInputField?.SetTextWithoutNotify(value.ToString());
 		}
 	}
 }
