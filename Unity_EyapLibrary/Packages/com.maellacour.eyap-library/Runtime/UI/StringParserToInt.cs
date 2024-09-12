@@ -1,11 +1,10 @@
-namespace AtomsExtensions
+namespace EyapLibrary.UI
 {
 	using UnityEngine;
-	using UnityAtoms.BaseAtoms;
 
-	public class ParseToIntVariable : MonoBehaviour
+	public class StringParserToInt : MonoBehaviour
 	{
-		[SerializeField] private IntVariable _intVariable;
+		[SerializeField] private UnityEvent<int> _unityEventResponse;
 
 		public void ParseFromString(string value)
 		{
@@ -15,7 +14,7 @@ namespace AtomsExtensions
 			}
 
 			int newValue = int.Parse(value);
-			_intVariable.SetValue(newValue);
+			_unityEventResponse.Raise(newValue);
 		}
 	}
 }
