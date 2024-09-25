@@ -3,7 +3,6 @@ namespace EyapLibrary.TMPHelpers
 	using TMPro;
 	using UnityEngine;
 
-	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class TMPTextSmartDisplayer : TMPTextDisplayerBase
 	{
 		[SerializeField] protected string _textFormat = "{0}";

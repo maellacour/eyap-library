@@ -3,7 +3,6 @@ namespace EyapLibrary.TMPHelpers
 	using TMPro;
 	using UnityEngine;
 
-	[RequireComponent(typeof(TMP_InputField))]
 	public abstract class TMPInputFieldDisplayerBase : MonoBehaviour
 	{
 		[SerializeField] protected TMP_InputField _tmpInputField;
