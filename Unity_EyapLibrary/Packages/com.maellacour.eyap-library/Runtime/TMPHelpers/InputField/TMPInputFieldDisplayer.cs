@@ -3,7 +3,6 @@ namespace EyapLibrary.TMPHelpers
 	using TMPro;
 	using UnityEngine;
 
-	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class TMPInputFieldDisplayer : TMPInputFieldDisplayerBase
 	{
 		public override void UpdateTextField(string value)

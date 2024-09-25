@@ -3,7 +3,6 @@ namespace EyapLibrary.TMPHelpers
 	using TMPro;
 	using UnityEngine;
 
-	[RequireComponent(typeof(TextMeshProUGUI))]
 	public abstract class TMPTextDisplayerBase : MonoBehaviour
 	{
 		[SerializeField] protected TextMeshProUGUI _tmpText;
