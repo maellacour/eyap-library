@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2026-02-23
+
+### Fixed
+
+- Package name was ambigus between eyaplibrary and eyap-library. Changed it to eyap-library to be consistent with the git url and avoid confusion.
+
 ## [2.1.1] - 2024-09-25
 
 ### Fixed
