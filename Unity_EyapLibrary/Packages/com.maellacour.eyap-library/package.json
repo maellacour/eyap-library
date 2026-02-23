@@ -1,6 +1,6 @@
 {
   "name": "com.maellacour.eyap-library",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "displayName": "Eyap Library",
   "description": "My library of common tools and methods for my unity projects.",
   "dependencies": {
