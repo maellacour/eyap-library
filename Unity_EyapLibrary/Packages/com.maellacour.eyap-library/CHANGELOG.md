@@ -9,17 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add `SceneScreenshot` editor tool under `Tools/Screenshots` to capture Scene View and Game View as PNG files, with a rebindable shortcut (default Ctrl+Alt+S).
+- Add `SceneScreenshot` editor tool (`Tools/EyapLibrary/Screenshots/`) to capture Scene View and Game View as timestamped PNGs saved to `<ProjectRoot>/Screenshots/`. Default shortcut Ctrl+Alt+S, rebindable via **Edit > Shortcuts... > Screenshots/Take Both**.
 
 ### Changed
 
-- Update menu item path for exporting localization CSV files to 'Tools/Localization' rather than 'EyapLibrary/Localization'.
+- Move `Editor/` folder to package root (was `Runtime/Editor/`) to follow standard Unity package layout conventions.
+- Group all editor menu items under `Tools/EyapLibrary/` to avoid polluting the shared `Tools/` menu root.
 
 ## [2.2.1] - 2026-05-07
 
-### Fixed
+### Removed
 
-- Remove `AtomColliderReferencer` class because Atom does not have `ColliderVariable` anymore.
+- **BREAKING** Remove `AtomColliderReferencer` class — `ColliderVariable` no longer exists in Unity Atoms 4.4.8. Any reference to this class must be deleted from consumer projects.
 
 ## [2.2.0] - 2026-02-23
 
