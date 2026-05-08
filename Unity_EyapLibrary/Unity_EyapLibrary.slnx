@@ -65,8 +65,8 @@
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="EyapLibrary.GeometryAndPlacement.RandomPoints.csproj" />
   <Project Path="EyapLibrary.GeometryAndPlacement.RandomPoints.Tests.csproj" />
-  <Project Path="EyapLibrary.Editor.csproj" />
   <Project Path="EyapLibrary.TMPHelpers.csproj" />
+  <Project Path="EyapLibrary.Editor.csproj" />
   <Project Path="Unity.Rendering.LightTransport.Editor.csproj" />
   <Project Path="Unity.InputSystem.DocCodeSamples.csproj" />
   <Project Path="EyapLibrary.FilesManagement.Tests.csproj" />

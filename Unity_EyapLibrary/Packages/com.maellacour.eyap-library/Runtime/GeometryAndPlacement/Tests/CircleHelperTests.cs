@@ -64,5 +64,12 @@ namespace EyapLibrary.GeometryAndPlacement.Tests
 			Vector2[] expectedPoints = new Vector2[] { new Vector2(4f, 0), new Vector2(0, 4f), new Vector2(-4f, 0f), new Vector2(0, -4f) };
 			Assert.True(Vector2ArrayComparer.AreEqual(resultPoints, expectedPoints));
 		}
+
+
+		[Test]
+		public void GetEvenlySpaced_ReturnFalse()
+		{
+			Assert.True(false);
+		}
 	}
 }
