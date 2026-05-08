@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add `SceneScreenshot` editor tool under `Tools/Screenshots` to capture Scene View and Game View as PNG files, with a rebindable shortcut (default Ctrl+Shift+S).
+- Add `SceneScreenshot` editor tool under `Tools/Screenshots` to capture Scene View and Game View as PNG files, with a rebindable shortcut (default Ctrl+Alt+S).
+
+### Changed
+
+- Update menu item path for exporting localization CSV files to 'Tools/Localization' rather than 'EyapLibrary/Localization'.
 
 ## [2.2.1] - 2026-05-07
 
