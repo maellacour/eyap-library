@@ -12,14 +12,14 @@ namespace EyapLibrary.Editor
 		private static string OutputDir => Path.Combine(Application.dataPath, "..", "Screenshots");
 
 		[Shortcut("Screenshots/Take Both", KeyCode.S, ShortcutModifiers.Control | ShortcutModifiers.Alt)]
-		[MenuItem("Tools/Screenshots/Both")]
+		[MenuItem("Tools/EyapLibrary/Screenshots/Both")]
 		private static void TakeBoth()
 		{
 			TakeSceneViewCapture();
 			TakeGameViewCapture();
 		}
 
-		[MenuItem("Tools/Screenshots/Scene View")]
+		[MenuItem("Tools/EyapLibrary/Screenshots/Scene View")]
 		private static void TakeSceneViewCapture()
 		{
 			var sceneView = SceneView.lastActiveSceneView;
@@ -34,7 +34,7 @@ namespace EyapLibrary.Editor
 			SaveCameraCapture(sceneView.camera, w, h, "SceneView");
 		}
 
-		[MenuItem("Tools/Screenshots/Game View")]
+		[MenuItem("Tools/EyapLibrary/Screenshots/Game View")]
 		private static void TakeGameViewCapture()
 		{
 			var cam = Camera.main ?? FindFirstActiveCamera();

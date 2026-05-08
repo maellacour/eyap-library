@@ -74,11 +74,11 @@ eyap-library/
 │       └── com.maellacour.eyap-library/
 │           ├── package.json           ← name: com.maellacour.eyap-library, version: 2.2.1
 │           ├── CHANGELOG.md           ← Keep a Changelog format, Semantic Versioning
+│           ├── Editor/                ← Editor-only tools (EyapLibrary.Editor asmdef)
 │           ├── Runtime/
 │           │   ├── AtomsHelpers/
 │           │   ├── CommonManagers/
 │           │   ├── Data/
-│           │   ├── Editor/            ← Editor-only tools (EyapLibrary.Editor asmdef)
 │           │   ├── Extensions/
 │           │   ├── FilesManagement/
 │           │   ├── GeometryAndPlacement/
@@ -110,12 +110,12 @@ eyap-library/
 | `EyapLibrary.Utils` | EyapLibrary.Utils | Singleton, PersistentSingleton, MathUtils, EnumUtils, VersionDisplayer |
 | `EyapLibrary.Editor` | EyapLibrary.Editor | Editor-only tools (see below) |
 
-### Editor tools (`Runtime/Editor/`)
+### Editor tools (`Editor/`)
 
-All editor scripts live here under the `EyapLibrary.Editor` namespace with `includePlatforms: ["Editor"]`.
+All editor scripts live here under the `EyapLibrary.Editor` namespace with `includePlatforms: ["Editor"]`. All menu items are grouped under the top-level `Tools/EyapLibrary/` menu.
 
-- **ExportLocalizationTableEditor** — `Tools/Localization/Export All CSV Files`: exports all Unity Localization string tables to CSV.
-- **SceneScreenshot** — `Tools/Screenshots/`: captures Scene View and/or Game View as timestamped PNGs saved to `<ProjectRoot>/Screenshots/`. Default shortcut Ctrl+Alt+S (rebindable via **Edit > Shortcuts... > Screenshots/Take Both**).
+- **ExportLocalizationTableEditor** — `Tools/EyapLibrary/Localization/Export All CSV Files`: exports all Unity Localization string tables to CSV.
+- **SceneScreenshot** — `Tools/EyapLibrary/Screenshots/`: captures Scene View and/or Game View as timestamped PNGs saved to `<ProjectRoot>/Screenshots/`. Default shortcut Ctrl+Alt+S (rebindable via **Edit > Shortcuts... > Screenshots/Take Both**).
 
 ### Tests
 
@@ -212,7 +212,7 @@ Guard clauses at the top of methods. Throw `ArgumentException` / `ArgumentOutOfR
 
 ## Adding an editor tool
 
-1. Drop the `.cs` file in `Runtime/Editor/`.
+1. Drop the `.cs` file in `Editor/`.
 2. Use namespace `EyapLibrary.Editor`.
 3. The existing `EyapLibrary.Editor.asmdef` covers it — no new asmdef needed unless the tool has a new dependency not already listed there.
 4. Update `CHANGELOG.md`.
