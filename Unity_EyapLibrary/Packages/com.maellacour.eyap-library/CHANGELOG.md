@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `SceneScreenshot` editor tool under `Tools/Screenshots` to capture Scene View and Game View as PNG files, with a rebindable shortcut (default Ctrl+Shift+S).
+
 ## [2.2.1] - 2026-05-07
 
 ### Fixed
