@@ -11,7 +11,7 @@ namespace EyapLibrary.Editor
 	/// </summary>
 	public class ExportLocalizationTableEditor
 	{
-		[MenuItem("EyapLibrary/Localization/Export All CSV Files")]
+		[MenuItem("Tools/Localization/Export All CSV Files")]
 		public static void ExportAllCsv()
 		{
 			// Get every String Table Collection
