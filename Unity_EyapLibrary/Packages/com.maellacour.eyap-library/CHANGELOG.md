@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] - 2026-05-08
+
+
 ### Added
 
 - Add `SceneScreenshot` editor tool (`Tools/EyapLibrary/Screenshots/`) to capture Scene View and Game View as timestamped PNGs saved to `<ProjectRoot>/Screenshots/`. Default shortcut Ctrl+Alt+S, rebindable via **Edit > Shortcuts... > Screenshots/Take Both**.
