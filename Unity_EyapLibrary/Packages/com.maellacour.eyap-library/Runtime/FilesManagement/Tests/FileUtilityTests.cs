@@ -1,5 +1,6 @@
 namespace EyapLibrary.FilesManagement.Tests
 {
+	using System;
 	using System.IO;
 	using System.Linq;
 	using NUnit.Framework;
@@ -8,34 +9,41 @@ namespace EyapLibrary.FilesManagement.Tests
 
 	public class FileUtilityTests
 	{
-		private const string TestDirectoryPath = "Assets/TestData";
-		private const string TestFilePath1 = "Assets/TestData/TestFile1.txt";
-		private const string TestFilePath2 = "Assets/TestData/TestFile2.txt";
+		private string _testDirectoryPath;
+		private string _testFilePath1;
+		private string _testFilePath2;
 
 		[SetUp]
 		public void SetUp()
 		{
-			Directory.CreateDirectory(TestDirectoryPath);
-			File.WriteAllText(TestFilePath1, "Test content 1");
-			File.WriteAllText(TestFilePath2, "Test content 2");
+			_testDirectoryPath = Path.Combine(Path.GetTempPath(), "EyapLibrary.FilesManagement.Tests." + Guid.NewGuid().ToString("N"));
+			_testFilePath1 = Path.Combine(_testDirectoryPath, "TestFile1.txt");
+			_testFilePath2 = Path.Combine(_testDirectoryPath, "TestFile2.txt");
+
+			Directory.CreateDirectory(_testDirectoryPath);
+			File.WriteAllText(_testFilePath1, "Test content 1");
+			File.WriteAllText(_testFilePath2, "Test content 2");
+
+			// Back-to-back writes can share the same timestamp, so set them explicitly.
+			DateTime olderTime = new DateTime(2020, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+			File.SetLastWriteTimeUtc(_testFilePath1, olderTime);
+			File.SetLastWriteTimeUtc(_testFilePath2, olderTime.AddHours(1));
 		}
 
 		[TearDown]
 		public void TearDown()
 		{
-			File.Delete(TestFilePath1);
-			File.Delete(TestFilePath2);
-			Directory.Delete(TestDirectoryPath);
+			Directory.Delete(_testDirectoryPath, true);
 		}
 
 		[Test]
 		public void GetLatestFileMatchingPattern_ReturnsLatestFile()
 		{
 			// Arrange
-			FileInfo expectedFile = new FileInfo(TestFilePath2);
+			FileInfo expectedFile = new FileInfo(_testFilePath2);
 
 			// Act
-			var actualFile = FileUtility.GetLatestFileMatchingPattern(TestDirectoryPath, "*.txt");
+			var actualFile = FileUtility.GetLatestFileMatchingPattern(_testDirectoryPath, "*.txt");
 
 			// Assert
 			Assert.AreEqual(expectedFile.FullName, actualFile.FullName);
@@ -45,7 +53,7 @@ namespace EyapLibrary.FilesManagement.Tests
 		public void GetLatestFileMatchingPattern_NoMatchingFiles_ReturnsNull()
 		{
 			// Act
-			var actualFile = FileUtility.GetLatestFileMatchingPattern(TestDirectoryPath, "*.png");
+			var actualFile = FileUtility.GetLatestFileMatchingPattern(_testDirectoryPath, "*.png");
 
 			// Assert
 			Assert.IsNull(actualFile);

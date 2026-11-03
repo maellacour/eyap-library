@@ -66,10 +66,11 @@ namespace EyapLibrary.GeometryAndPlacement.Tests
 		}
 
 
-		[Test]
-		public void GetEvenlySpaced_ReturnFalse()
+		[TestCase(1)]
+		[TestCase(0)]
+		public void GetEvenlySpaced_LessThanTwoPoints_ThrowsArgumentException(int totalPoints)
 		{
-			Assert.True(false);
+			Assert.Throws<ArgumentException>(() => CircleHelper.GetEvenlySpaced(totalPoints));
 		}
 	}
 }
