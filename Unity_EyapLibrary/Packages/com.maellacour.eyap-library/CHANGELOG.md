@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Add `com.unity.ugui` 2.0.0 as a dependency: `EyapLibrary.TMPHelpers` (TextMeshPro lives in uGUI since Unity 6) and `EyapLibrary.UI` need it.
+
+### Fixed
+
+- Tests: test assemblies are now proper test assemblies (`UNITY_INCLUDE_TESTS` define constraint, not auto-referenced, referencing the test runner and NUnit). They no longer show up and fail in every project that installs the package; to run them in another project, add `com.maellacour.eyap-library` to `testables` in its `Packages/manifest.json`.
+- Tests: replace the always-failing `CircleHelperTests.GetEvenlySpaced_ReturnFalse` with a test checking that `GetEvenlySpaced` throws `ArgumentException` for fewer than 2 points.
+- Tests: fix flaky `FileUtilityTests.GetLatestFileMatchingPattern_ReturnsLatestFile` by setting the file timestamps explicitly. The fixture now writes to a unique temporary folder instead of the project's `Assets/TestData`.
+- UI: add the missing `EyapLibrary.UI` assembly definition. `Fader` and `StringParserToInt` were never compiled, so they could not be used.
+- UI: fix `StringParserToInt` compile errors (missing `UnityEngine.Events` using, `UnityEvent` has `Invoke`, not `Raise`).
+- UI: `Fader.FadeInOut()` and `Fader.FadeOutIn()` now start the second fade when the first one ends, instead of running both fades at the same time.
+
 ## [2.3.0] - 2026-05-08
 
 

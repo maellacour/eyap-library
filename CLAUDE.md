@@ -106,7 +106,7 @@ eyap-library/
 | `EyapLibrary.GeometryAndPlacement.RandomPoints` | EyapLibrary.GeometryAndPlacement.RandomPoints | Uniform and Poisson disk random point generation in 2D/3D |
 | `EyapLibrary.TMPHelpers` | EyapLibrary.TMPHelpers | TextMeshPro display helpers: TMPTextDisplayer, TMPInputFieldDisplayer |
 | `EyapLibrary.Types` | EyapLibrary.Types | Custom serializable value types: IntVector2, IntVector3 |
-| `EyapLibrary.UI` | (default assembly) | UI components: Fader, StringParserToInt |
+| `EyapLibrary.UI` | EyapLibrary.UI | UI components: Fader, StringParserToInt |
 | `EyapLibrary.Utils` | EyapLibrary.Utils | Singleton, PersistentSingleton, MathUtils, EnumUtils, VersionDisplayer |
 | `EyapLibrary.Editor` | EyapLibrary.Editor | Editor-only tools (see below) |
 
@@ -121,10 +121,13 @@ All editor scripts live here under the `EyapLibrary.Editor` namespace with `incl
 
 Modules that have tests: Extensions, FilesManagement, GeometryAndPlacement, GeometryAndPlacement.RandomPoints, Utils. Tests live in a `Tests/` subfolder inside the module, use NUnit, are Editor-only, and follow the naming pattern `EyapLibrary.{Module}.Tests`.
 
+Test asmdefs must be real test assemblies so they don't leak into consumer projects: `defineConstraints: ["UNITY_INCLUDE_TESTS"]`, `autoReferenced: false`, references `UnityEngine.TestRunner` and `UnityEditor.TestRunner`, `overrideReferences: true` with `precompiledReferences: ["nunit.framework.dll"]`, `includePlatforms: ["Editor"]`. The dev project embeds the package, so its tests run there without a `testables` entry; other projects must list the package under `testables` to run them.
+
 ### Dependencies
 
 - **com.unity-atoms.unity-atoms-base-atoms** 4.4.8 — reactive event/variable system used by AtomsHelpers and CommonManagers.
 - **com.unity.localization** 1.3.2 — used by ExportLocalizationTableEditor.
+- **com.unity.ugui** 2.0.0 — uGUI and TextMeshPro, used by TMPHelpers and UI.
 
 ---
 
@@ -206,7 +209,7 @@ Guard clauses at the top of methods. Throw `ArgumentException` / `ArgumentOutOfR
 1. Create `Runtime/{ModuleName}/` with at least one `.cs` file.
 2. Add an asmdef named `EyapLibrary.{ModuleName}` with `rootNamespace` left empty.
 3. Use namespace `EyapLibrary.{ModuleName}` in all files.
-4. If tests are warranted, add `Runtime/{ModuleName}/Tests/` with an Editor-only asmdef `EyapLibrary.{ModuleName}.Tests`.
+4. If tests are warranted, add `Runtime/{ModuleName}/Tests/` with a test asmdef `EyapLibrary.{ModuleName}.Tests` (settings in the Tests section above).
 5. Add the module to the table in this file.
 6. Update `CHANGELOG.md` under `[Unreleased] > Added`.
 
