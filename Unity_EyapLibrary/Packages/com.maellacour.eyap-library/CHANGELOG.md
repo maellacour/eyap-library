@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.1] - 2026-11-03
+
 ### Changed
 
 - Add `com.unity.ugui` 2.0.0 as a dependency: `EyapLibrary.TMPHelpers` (TextMeshPro lives in uGUI since Unity 6) and `EyapLibrary.UI` need it.
