@@ -74,6 +74,7 @@
   <Project Path="Unity.RenderPipelines.Core.Runtime.Shared.csproj" />
   <Project Path="EyapLibrary.Types.csproj" />
   <Project Path="EyapLibrary.CommonManagers.csproj" />
+  <Project Path="EyapLibrary.UI.csproj" />
   <Project Path="EyapLibrary.FilesManagement.csproj" />
   <Project Path="Unity.ScriptableBuildPipeline.csproj" />
   <Project Path="EyapLibrary.GeometryAndPlacement.Tests.csproj" />
