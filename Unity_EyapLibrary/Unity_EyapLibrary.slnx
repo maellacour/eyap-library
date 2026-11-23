@@ -46,6 +46,7 @@
   <Project Path="EyapLibrary.Extensions.csproj" />
   <Project Path="Unity.InternalAPIEditorBridge.013.csproj" />
   <Project Path="Unity.AI.Navigation.Editor.csproj" />
+  <Project Path="EyapLibrary.TMPHelpers.Tests.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
   <Project Path="UnityAtoms.UnityAtomsCore.Editor.csproj" />
   <Project Path="Unity.InputSystem.ForUI.csproj" />
