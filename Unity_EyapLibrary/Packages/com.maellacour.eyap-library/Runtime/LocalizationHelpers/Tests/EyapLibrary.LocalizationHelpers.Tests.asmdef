@@ -1,0 +1,27 @@
+{
+    "name": "EyapLibrary.LocalizationHelpers.Tests",
+    "rootNamespace": "",
+    "references": [
+        "EyapLibrary.LocalizationHelpers",
+        "Unity.Localization",
+        "UnityAtoms.UnityAtomsBaseAtoms.Runtime",
+        "UnityAtoms.UnityAtomsCore.Runtime",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
