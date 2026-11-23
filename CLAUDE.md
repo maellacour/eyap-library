@@ -83,6 +83,7 @@ eyap-library/
 │           │   ├── FilesManagement/
 │           │   ├── GeometryAndPlacement/
 │           │   │   └── RandomPoints/
+│           │   ├── LocalizationHelpers/
 │           │   ├── TMPHelpers/
 │           │   ├── Types/
 │           │   ├── UI/
@@ -104,6 +105,7 @@ eyap-library/
 | `EyapLibrary.FilesManagement` | EyapLibrary.FilesManagement | File system utilities (e.g. find latest file matching a pattern) |
 | `EyapLibrary.GeometryAndPlacement` | EyapLibrary.GeometryAndPlacement | Geometric helpers: CircleHelper (evenly spaced points on a circle) |
 | `EyapLibrary.GeometryAndPlacement.RandomPoints` | EyapLibrary.GeometryAndPlacement.RandomPoints | Uniform and Poisson disk random point generation in 2D/3D |
+| `EyapLibrary.LocalizationHelpers` | EyapLibrary.LocalizationHelpers | Smart String variables backed by Unity Atoms variables (IntAtomSmartVariable, etc.); see the module README |
 | `EyapLibrary.TMPHelpers` | EyapLibrary.TMPHelpers | TextMeshPro display helpers: TMPTextDisplayer, TMPInputFieldDisplayer |
 | `EyapLibrary.Types` | EyapLibrary.Types | Custom serializable value types: IntVector2, IntVector3 |
 | `EyapLibrary.UI` | EyapLibrary.UI | UI components: Fader, StringParserToInt |
@@ -119,14 +121,14 @@ All editor scripts live here under the `EyapLibrary.Editor` namespace with `incl
 
 ### Tests
 
-Modules that have tests: Extensions, FilesManagement, GeometryAndPlacement, GeometryAndPlacement.RandomPoints, Utils. Tests live in a `Tests/` subfolder inside the module, use NUnit, are Editor-only, and follow the naming pattern `EyapLibrary.{Module}.Tests`.
+Modules that have tests: Extensions, FilesManagement, GeometryAndPlacement, GeometryAndPlacement.RandomPoints, LocalizationHelpers, TMPHelpers, Utils. Tests live in a `Tests/` subfolder inside the module, use NUnit, are Editor-only, and follow the naming pattern `EyapLibrary.{Module}.Tests`.
 
 Test asmdefs must be real test assemblies so they don't leak into consumer projects: `defineConstraints: ["UNITY_INCLUDE_TESTS"]`, `autoReferenced: false`, references `UnityEngine.TestRunner` and `UnityEditor.TestRunner`, `overrideReferences: true` with `precompiledReferences: ["nunit.framework.dll"]`, `includePlatforms: ["Editor"]`. The dev project embeds the package, so its tests run there without a `testables` entry; other projects must list the package under `testables` to run them.
 
 ### Dependencies
 
-- **com.unity-atoms.unity-atoms-base-atoms** 4.4.8 — reactive event/variable system used by AtomsHelpers and CommonManagers.
-- **com.unity.localization** 1.3.2 — used by ExportLocalizationTableEditor.
+- **com.unity-atoms.unity-atoms-base-atoms** 4.4.8 — reactive event/variable system used by AtomsHelpers, CommonManagers and LocalizationHelpers.
+- **com.unity.localization** 1.3.2 — used by ExportLocalizationTableEditor and LocalizationHelpers.
 - **com.unity.ugui** 2.0.0 — uGUI and TextMeshPro, used by TMPHelpers and UI.
 
 ---

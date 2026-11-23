@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add the `EyapLibrary.LocalizationHelpers` module: `IntAtomSmartVariable`, `FloatAtomSmartVariable`, `StringAtomSmartVariable` and `BoolAtomSmartVariable` let a localized Smart String use a Unity Atoms variable and refresh itself when the variable changes. See `Runtime/LocalizationHelpers/README.md` for the reason they exist and how to use them.
+- Tests: add tests for `TMPTextSmartDisplayer`.
+
+### Fixed
+
+- TMPHelpers: `TMPTextSmartDisplayer` and `TMPInputFieldSmartDisplayer` now apply format specifiers such as `{0:F2}` or `{0:D3}`. The value was converted to a string before being formatted, so the specifier was ignored. Passing a null object no longer throws.
+
 ## [2.3.1] - 2026-11-03
 
 ### Changed
