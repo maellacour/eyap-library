@@ -2,17 +2,23 @@
     "name": "EyapLibrary.GeometryAndPlacement.Tests",
     "rootNamespace": "",
     "references": [
-        "GUID:93ce1cd9b96ff0f449182f6a98209678"
+        "GUID:93ce1cd9b96ff0f449182f6a98209678",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }

@@ -2,17 +2,23 @@
     "name": "EyapLibrary.Extensions.Tests",
     "rootNamespace": "",
     "references": [
-        "GUID:48d4bcab80de697449acc16cb8dd52de"
+        "GUID:48d4bcab80de697449acc16cb8dd52de",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }

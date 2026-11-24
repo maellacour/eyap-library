@@ -1,6 +1,7 @@
 namespace EyapLibrary.UI
 {
 	using UnityEngine;
+	using UnityEngine.Events;
 
 	public class StringParserToInt : MonoBehaviour
 	{
@@ -14,7 +15,7 @@ namespace EyapLibrary.UI
 			}
 
 			int newValue = int.Parse(value);
-			_unityEventResponse.Raise(newValue);
+			_unityEventResponse.Invoke(newValue);
 		}
 	}
 }

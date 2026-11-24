@@ -14,32 +14,32 @@ namespace EyapLibrary.TMPHelpers
 
 		public override void UpdateTextField(int value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 
 		public override void UpdateTextField(float value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 
 		public override void UpdateTextField(bool value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 
 		public override void UpdateTextField(Vector3 value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 
 		public override void UpdateTextField(Vector2 value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 
 		public override void UpdateTextField(object value)
 		{
-			_tmpText?.SetText(string.Format(_textFormat, value.ToString()));
+			_tmpText?.SetText(string.Format(_textFormat, value));
 		}
 	}
 }

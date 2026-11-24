@@ -5,7 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.4.0] - 2026-11-24
+
+### Added
+
+- Add the `EyapLibrary.LocalizationHelpers` module: `IntAtomSmartVariable`, `FloatAtomSmartVariable`, `StringAtomSmartVariable` and `BoolAtomSmartVariable` let a localized Smart String use a Unity Atoms variable and refresh itself when the variable changes. See `Runtime/LocalizationHelpers/README.md` for the reason they exist and how to use them.
+- Tests: add tests for `TMPTextSmartDisplayer`.
+
+### Changed
+
+- Add `com.unity.ugui` 2.0.0 as a dependency: `EyapLibrary.TMPHelpers` (TextMeshPro lives in uGUI since Unity 6) and `EyapLibrary.UI` need it.
+
+### Fixed
+
+- TMPHelpers: `TMPTextSmartDisplayer` and `TMPInputFieldSmartDisplayer` now apply format specifiers such as `{0:F2}` or `{0:D3}`. The value was converted to a string before being formatted, so the specifier was ignored. Passing a null object no longer throws.
+- Tests: test assemblies are now proper test assemblies (`UNITY_INCLUDE_TESTS` define constraint, not auto-referenced, referencing the test runner and NUnit). They no longer show up and fail in every project that installs the package; to run them in another project, add `com.maellacour.eyap-library` to `testables` in its `Packages/manifest.json`.
+- Tests: replace the always-failing `CircleHelperTests.GetEvenlySpaced_ReturnFalse` with a test checking that `GetEvenlySpaced` throws `ArgumentException` for fewer than 2 points.
+- Tests: fix flaky `FileUtilityTests.GetLatestFileMatchingPattern_ReturnsLatestFile` by setting the file timestamps explicitly. The fixture now writes to a unique temporary folder instead of the project's `Assets/TestData`.
+- UI: add the missing `EyapLibrary.UI` assembly definition. `Fader` and `StringParserToInt` were never compiled, so they could not be used.
+- UI: fix `StringParserToInt` compile errors (missing `UnityEngine.Events` using, `UnityEvent` has `Invoke`, not `Raise`).
+- UI: `Fader.FadeInOut()` and `Fader.FadeOutIn()` now start the second fade when the first one ends, instead of running both fades at the same time.
 
 ## [2.3.0] - 2026-05-08
 

@@ -21,15 +21,19 @@ namespace EyapLibrary.UI
 		/// Fade from black to clear.
 		/// </summary>
 		public void FadeOut() => StartCoroutine(FadeCoroutine(false));
-		public void FadeInOut()
+		/// <summary>
+		/// Fade from clear to black, then back to clear once the first fade ends.
+		/// </summary>
+		public void FadeInOut() => StartCoroutine(FadeSequenceCoroutine(true));
+		/// <summary>
+		/// Fade from black to clear, then back to black once the first fade ends.
+		/// </summary>
+		public void FadeOutIn() => StartCoroutine(FadeSequenceCoroutine(false));
+
+		IEnumerator FadeSequenceCoroutine(bool isFadeInFirst)
 		{
-			FadeIn();
-			FadeOut();
-		}
-		public void FadeOutIn()
-		{
-			FadeOut();
-			FadeIn();
+			yield return FadeCoroutine(isFadeInFirst);
+			yield return FadeCoroutine(!isFadeInFirst);
 		}
 
 		IEnumerator FadeCoroutine(bool isFadeIn)
