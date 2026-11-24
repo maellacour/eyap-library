@@ -72,7 +72,7 @@ eyap-library/
 ├── Unity_EyapLibrary/
 │   └── Packages/
 │       └── com.maellacour.eyap-library/
-│           ├── package.json           ← name: com.maellacour.eyap-library, version: 2.2.1
+│           ├── package.json           ← name: com.maellacour.eyap-library, version: 2.4.0
 │           ├── CHANGELOG.md           ← Keep a Changelog format, Semantic Versioning
 │           ├── Editor/                ← Editor-only tools (EyapLibrary.Editor asmdef)
 │           ├── Runtime/
